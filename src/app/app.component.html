@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Placement Management - Student Service</h1>
+
+  <h2>Add Student</h2>
+  <form (ngSubmit)="addStudent()">
+    <input type="text" placeholder="Name" [(ngModel)]="newStudent.name" name="name" required>
+    <input type="email" placeholder="Email" [(ngModel)]="newStudent.email" name="email" required>
+    <input type="text" placeholder="Course" [(ngModel)]="newStudent.course" name="course" required>
+    <button type="submit">Add Student</button>
+  </form>
+
+  <h2>Student List</h2>
+  <ul>
+    <li *ngFor="let student of students">
+      {{ student.name }} - {{ student.email }} - {{ student.course }}
+      <button (click)="deleteStudent(student.id)">Delete</button>
+    </li>
+  </ul>
+</div>
